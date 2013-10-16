@@ -1,4 +1,6 @@
 var Roll20 = Roll20 || (function(context){
+    context.state = {};
+
     function out(opts){
         console.log('[R20:' + opts.caller + '] ' + opts.msg);
     }
@@ -30,7 +32,11 @@ var Roll20 = Roll20 || (function(context){
 })(this);
 var R20 = Roll20;
 
-Roll20.objstore = {};
+Roll20.objstore = {
+  Campaign:{
+              state: {}
+           }
+};
 
 Roll20.Object = function (type, attributes){
     attributes = attributes || {};

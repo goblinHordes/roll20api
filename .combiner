@@ -6,5 +6,6 @@ gH/Util/Debug.js
 roll20/Roll20.js
 
 gH/ActiveObjects/ActiveObjects.js
+gH/ActiveObjects/ActiveDoor.js
 
 gH_tests.js

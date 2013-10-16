@@ -1,12 +1,11 @@
 /*
 ActiveObjects.ActiveDoor - an ActiveObject to control doors
 */
-AO.ActiveDoor = function (state){}
+AO.ActiveDoor = function (id, aoState){}
 AO.ActiveDoor.prototype = new AO.ActiveObject();
 AO.ActiveDoor.prototype.constructor = AO.ActiveDoor;
-AO.ActiveDoor.prototype.closeDoor = function (){}
 AO.ActiveDoor.prototype.defaultState =  {
-        type:     this.type,
+        type:     "door",
         position: "open",
         is_locked: false,
         objStore: {
@@ -19,7 +18,8 @@ AO.ActiveDoor.prototype.defaultState =  {
          }
         }
     }
-    
+
+AO.ActiveDoor.prototype.closeDoor = function (){}
 AO.ActiveDoor.prototype.openDoor = function (){
     if(!this.getState('locked')){
         //transitionObjects(oldState, newState);
@@ -29,7 +29,7 @@ AO.ActiveDoor.prototype.openDoor = function (){
 }
 AO.ActiveDoor.prototype.toggleDoor = function (){
  
-    if(this.getState('position') == 'open'){
+    if(this.position == 'open'){
         closeDoor();
     } else {
         openDoor();
@@ -37,7 +37,6 @@ AO.ActiveDoor.prototype.toggleDoor = function (){
     
 }
 
-ad = new AO.ActiveDoor();
-console.log("Key:" +Object.keys(ad.getState()));
+
 
 
