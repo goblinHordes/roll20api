@@ -7,7 +7,9 @@ dbg.info(token1.get("gmnotes"));
 ao = new AO.ActiveObject('f216c0b4-2ca6-4aa7-ad17-dc91d99fa277');
 dbg.info(ao.id);
 
-ad = new AO.ActiveDoor();
-console.log(ad.state);
+ad = new ActiveObjects.ActiveDoor();
+console.log(ad.get());
+console.log(ActiveObjects.ActiveDoor.defaultState);
+
 
 

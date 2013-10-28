@@ -1,5 +1,5 @@
 // establish ActiveObject namespace
-var ActiveObjects = ActiveObjects || {}
+_.namespace("ActiveObjects");
 // create namespace shortcut
 var AO = ActiveObjects;
 
@@ -13,8 +13,20 @@ ActiveObjects.ActiveObject - a virtual composite base object that includes
 */
 AO.ActiveObject = function (id, aoState){
   this.id = id || Util.guid();
-  activeState = this.constructor.defaultState
-  log("defaultState:"+Object.keys(this.constructor.defaultState));
+  this.initialize(aoState);
+
+  this.get = function (attrib){
+    if(attrib)
+      return state[this.id][attrib]
+    else
+      return state[this.id]
+  }
+
+}
+AO.ActiveObject.prototype.initialize = function (aoState){
+  activeState = this.constructor.defaultState;
+  log("id:"+this.constructor);
+  log("defaultState:" + Object.keys(this.constructor.defaultState));
   if(aoState)
     _.extend(activeState, aoState)
   else
@@ -23,13 +35,6 @@ AO.ActiveObject = function (id, aoState){
   log("activeState:"+ Object.keys(activeState));
 
   state[this.id] = activeState;
-
-  this.get = function (attrib){
-    if(attrib)
-      return state[this.id][attrib]
-    else
-      return state[this.id]
-  }
 
 }
 AO.ActiveObject.defaultState = {

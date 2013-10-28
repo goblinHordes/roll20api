@@ -26,7 +26,10 @@ var Roll20 = Roll20 || (function(context){
              
         });
     }
-    
+   
+    context.randomInteger = function (max){
+     return Math.floor(Math.random() * max) + 1
+    }
     
     return({});
 })(this);

@@ -1,23 +1,24 @@
 /*
 ActiveObjects.ActiveDoor - an ActiveObject to control doors
 */
-AO.ActiveDoor = function (id, aoState){}
 AO.ActiveDoor.prototype = new AO.ActiveObject();
 AO.ActiveDoor.prototype.constructor = AO.ActiveDoor;
-AO.ActiveDoor.prototype.defaultState =  {
-        type:     "door",
-        position: "open",
-        is_locked: false,
-        objStore: {
-            tokCommand: undefined,
-        objState: {
-            open:     {},
-            closed:   {},
-            locked:   {},
-            unlocked: {}
-         }
-        }
-    }
+AO.ActiveDoor = function (id, aoState){}
+
+AO.ActiveDoor.defaultState =  {
+  type:     "door",
+  position: "open",
+  is_locked: false,
+  objStore: {
+      tokCommand: undefined,
+  },
+  objState: {
+      open:     {},
+      closed:   {},
+      locked:   {},
+      unlocked: {}
+  }
+}
 
 AO.ActiveDoor.prototype.closeDoor = function (){}
 AO.ActiveDoor.prototype.openDoor = function (){

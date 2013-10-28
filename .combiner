@@ -1,11 +1,31 @@
-underscore/underscore.js
+;underscore/underscore_loader.js
+;underscore/underscore.js
+helpers.js
+
+gH.js
 
 gH/Util.js
 gH/Util/Debug.js
 
-roll20/Roll20.js
+;roll20/Roll20.js
 
-gH/ActiveObjects/ActiveObjects.js
-gH/ActiveObjects/ActiveDoor.js
+;gH/ActiveObjects/ActiveObjects.js
+;gH/ActiveObjects/ActiveDoor.js
 
-gH_tests.js
+
+gH/BFrpg.js
+gH/BFrpg/StatBlock.js
+gH/BFrpg/PlayerCharacter.js
+gH/BFrpg/Class.js
+gH/BFrpg/Class/Fighter.js
+gH/BFrpg/Class/MagicUser.js
+gH/BFrpg/Class/Thief.js
+gH/BFrpg/Class/Cleric.js
+gH/BFrpg/Race.js
+gH/BFrpg/Race/Dwarf.js
+gH/BFrpg/Race/Elf.js
+gH/BFrpg/Race/Halfling.js
+gH/BFrpg/Race/Human.js
+
+;bfrpg_pcgen.js
+
