@@ -32,3 +32,8 @@ bf.Class.prototype.bonuses = {}
 bf.Class.prototype.reqs = {};
 bf.Class.prototype.strings = { name: 'undefined Class' };
 bf.Class.prototype.toString = function(){ return this.strings.name }
+bf.Class.prototype.xpToLevel = [];
+bf.Class.prototype.spellsAtLevel = [];
+bf.Class.prototype.abilities = [];
+
+

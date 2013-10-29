@@ -5,7 +5,7 @@ helpers.js
 gH.js
 
 gH/Util.js
-gH/Util/Debug.js
+;gH/Util/Debug.js
 
 ;roll20/Roll20.js
 
@@ -28,4 +28,4 @@ gH/BFrpg/Race/Halfling.js
 gH/BFrpg/Race/Human.js
 
 ;bfrpg_pcgen.js
-
+;gH_tests.js

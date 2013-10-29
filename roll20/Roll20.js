@@ -30,16 +30,19 @@ var Roll20 = Roll20 || (function(context){
     context.randomInteger = function (max){
      return Math.floor(Math.random() * max) + 1
     }
+
+    context.Campaign = function() {
+      return Roll20.objstore[campaign]
+    }
     
+    context.state = {};
+
     return({});
 })(this);
 var R20 = Roll20;
 
-Roll20.objstore = {
-  Campaign:{
-              state: {}
-           }
-};
+Roll20.objstore = {};
+
 
 Roll20.Object = function (type, attributes){
     attributes = attributes || {};
@@ -60,3 +63,4 @@ Roll20.Object.prototype.set = function (attr, value){
   this._attributes[attr] = value;
 }
 
+Roll20.objstore.campaign = new Roll20.Object;

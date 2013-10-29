@@ -6,6 +6,7 @@ bf.PlayerCharacter = function (){
   var pRaces;
   var pClasses;
   var hitPoints;
+  var maxHitPoints;
   var level = 0;
 
   this.sex = ['male', 'female'][(Math.floor(Math.random() * 2))];
@@ -51,8 +52,14 @@ bf.PlayerCharacter.prototype.levelUp = function (){
   hitPointUpgrade = randomInteger(hitDie);
   if(this.level >= 10)
     hitDiePointUpgrade += ((this.level - 9) * this.class.hitDieBonusMultiplier);
-  this.hitPoints += hitDie;
-  return hitDie;
+  else
+    hitPointUpgrade += this.statBlock.modifier('constitution');
+ 
+  hitPointUpgrade = Math.max(1, hitPointUpgrade);
+
+  this.maxHitPoints += hitPointUpgrade;
+  
+  return hitPointUpgrade;
 }
 bf.PlayerCharacter.prototype.eligibleRaces = function (){
   races = {};
